@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Email Activation</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 600px; 
+            margin: 50px auto; 
+            padding: 20px; 
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status-box {
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .not-activated {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        .activated {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+        .email-info {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Email Activation Checker</h1>
+        
+        <div class="email-info">
+            <h3>Your Email: m22917426@gmail.com</h3>
+            <p>FormSubmit URL: https://formsubmit.co/m22917426@gmail.com</p>
+        </div>
+
+        <h2>How to Check Activation Status:</h2>
+        
+        <div class="status-box not-activated">
+            <h3>📧 Check Your Email First:</h3>
+            <ul>
+                <li>Check your <strong>main inbox</strong></li>
+                <li>Check your <strong>spam/junk folder</strong></li>
+                <li>Check <strong>Gmail Promotions tab</strong></li>
+                <li>Search for "FormSubmit" in your email</li>
+            </ul>
+        </div>
+
+        <h2>🧪 Test Methods:</h2>
+        
+        <h3>Method 1: Quick Test</h3>
+        <p>Click the button below to test if your email is activated:</p>
+        <button class="test-button" onclick="testActivation()">Test Email Activation</button>
+        
+        <h3>Method 2: Manual Test</h3>
+        <p>Submit your actual contact form and watch what happens:</p>
+        <button class="test-button" onclick="goToContactForm()">Go to Contact Form</button>
+        
+        <div id="result"></div>
+        
+        <hr style="margin: 30px 0;">
+        
+        <h2>📋 What to Look For:</h2>
+        
+        <div class="status-box not-activated">
+            <h3>❌ If NOT Activated:</h3>
+            <ul>
+                <li>You'll see a FormSubmit page after submission</li>
+                <li>Page will say "Please confirm your email address"</li>
+                <li>You'll need to check your email for activation link</li>
+            </ul>
+        </div>
+        
+        <div class="status-box activated">
+            <h3>✅ If Activated:</h3>
+            <ul>
+                <li>Form will submit successfully</li>
+                <li>You'll see a success message</li>
+                <li>You'll receive the email in your inbox</li>
+            </ul>
+        </div>
+        
+        <h2>🛠️ If Still Not Working:</h2>
+        <ol>
+            <li>Check if you received the activation email</li>
+            <li>Click the activation link if you found it</li>
+            <li>Wait 5-10 minutes after activation</li>
+            <li>Try submitting the form again</li>
+            <li>Check your spam folder for the activation email</li>
+        </ol>
+    </div>
+
+    <script>
+        function testActivation() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <div class="status-box not-activated">
+                    <h3>🧪 Testing Activation...</h3>
+                    <p>Opening FormSubmit test page...</p>
+                    <p>If you see a confirmation page, your email is NOT activated.</p>
+                    <p>If you see a success page, your email IS activated.</p>
+                </div>
+            `;
+            
+            // Open FormSubmit test page
+            window.open('https://formsubmit.co/m22917426@gmail.com', '_blank');
+        }
+        
+        function goToContactForm() {
+            // Navigate to your contact form
+            window.location.href = './index.html';
+        }
+    </script>
+</body>
+</html> 
